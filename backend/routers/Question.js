@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const questionDB = require("../models/Questions");
-const isAuthenticated = require("../controller/requestAuthenticator");
+// const isAuthenticated = require("../controller/requestAuthenticator");
 const Answers = require("../models/Answers");
 
 router.post("/", async (req, res) => {
@@ -41,58 +41,7 @@ router.get("/", async (req, res) => {
     message: "Error in retrieving blogs",
     error: "Bad Request",
   };
-  // questionDB
-  //   .aggregate([
-  //     {
-  //       $lookup: {
-  //         from: "answers",
-  //         let: { questionId: "$_id" },
-  //         pipeline: [
-  //           {
-  //             $match: {
-  //               expr: {
-  //                 $eq: ["$questionId", "$$questionId"],
-  //               },
-  //             },
-  //           },
-  //           {
-  //             $project: {
-  //               _id: 1,
-  //               answer: 1,
-  //               userDetails: 1,
-  //               createdAt: 1,
-  //             },
-  //           },
-  //         ],
-  //         as: "answers",
-  //       },
-  //     },
-  //     {
-  //       $unwind: {
-  //         path: "$answers",
-  //         preserveNullAndEmptyArrays: true,
-  //       },
-  //     },
-  //     {
-  //       $project: {
-  //         __v: 0
-  //         // _id: 1,
-  //         // questionName: 1,
-  //         // questionUrl: 1,
-  //         // userDetails: 1,
-  //         // createdAt: 1,
-  //         // allAnswers: 1,
-  //         // answers: 1,
-  //       },
-  //     },
-  //   ])
-  // questionDB.find({}).populate('answers').exec().then((doc) => {
-  //         res.status(200).send(doc);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(400).send(error);
-  //   });
+ 
   questionDB.aggregate([
     {
       $lookup: {

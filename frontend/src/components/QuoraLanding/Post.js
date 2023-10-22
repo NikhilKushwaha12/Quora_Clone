@@ -1,37 +1,77 @@
-import { Avatar } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+// import { Avatar } from "@material-ui/core";
+import React, { useRef ,useEffect, useState } from "react";
 import "./Post.css";
-import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
-import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
-import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
-import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
-import { BorderTop, MoreHorizOutlined, ShareOutlined } from "@material-ui/icons";
-import { useDispatch, useSelector } from "react-redux";
+import Uploads from './upload';
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
-
-// import db from "../firebase";
-// import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
-import firebase from "firebase";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "react-responsive-modal/styles.css";
-import CloseIcon from "@material-ui/icons/Close";
-import TimeAdded from "../../Utils/timeAgo";
-import { token } from "../../Utils/decodedToken";
 import axios from "axios";
-import { errorModal, successModal } from "../../Utils/AlertModal";
+import "react-responsive-modal/styles.css";
+import CloseIcon from '@mui/icons-material/Close';
+import 'react-quill/dist/quill.snow.css'
+import FilterIcon from '@mui/icons-material/Filter';
+import ReactTimeAgo from 'react-time-ago'
 
-function Post({ questionId, key, question, imageUrl, timestamp, users, answers }) {
-  const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
 
+
+function LastSeen({ date }) {
+  return (
+    <div>
+      <ReactTimeAgo date={date} locale="en-US" timeStyle="round" />
+    </div>
+  );
+}
+
+ function QuoraPost({ questionId, key, question, imageUrl, timestamp, users, answers }) {
+  // const dispatch = useDispatch();
   const [IsmodalOpen, setIsModalOpen] = useState(false);
-  // const questionId = useSelector(selectQuestionId);
+  
+
   const [answer, setAnswer] = useState("");
   const [getAnswers, setGetAnswers] = useState(answers);
 
   // console.log(answers)
+
+
+
+  const [isOpen , setIsOpen] = useState(false)
+  const [showReadMoreButton , setReadMoreButton] = useState(false)
+  const ref = useRef(null)
+  
+  useEffect(()=>{
+  if(ref.current){
+  setReadMoreButton(
+  ref.current.scrollHeight !== ref.current.clientHeight
+  )}
+  },[])
+  
+  // for color change of upvote downvote
+  const [upvoted, setUpvoted] = useState(false);
+  const [downvoted, setDownvoted] = useState(false);
+  const [count, setCount] = useState(0);
+  
+  const handleUpvote = () => {
+    if (!upvoted) {
+      setUpvoted(true);
+      setDownvoted(false);
+      setCount(count + 1);
+    }
+  };
+  
+  const handleDownvote = () => {
+    if (!downvoted) {
+      setDownvoted(true);
+      setUpvoted(false);
+      setCount(count - 1);
+    }
+  };
+  
+
+
+
+
 
   const [show, setShow] = useState(false)
   const Close = (
@@ -59,67 +99,49 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
     const config = {
       headers: {
         "Content-Type": "application/json",
-        authorization: token,
       },
     };
     if (answer !== "") {
       const body = {
         answer: answer,
         questionId: questionId,
-        userDetails: {
-          role: userLogin?.userInfo?.role,
-          userEmail: userLogin?.userInfo?.userEmail,
-          userId: userLogin?.userInfo?.userId,
-        },
       };
 
       await axios
-        .post(`/api/answers`, body, config)
+        .post("/api/answers", body, config)
         .then((res) => {
           console.log(res.data);
-          successModal('Answer added successfully')
-          // alert('Answer added succesfully')
+          alert('Answer added succesfully')
           setIsModalOpen(false)
         })
         .catch((err) => {
           console.log(err);
-          errorModal('Error while adding question')
+          
         });
     }
   };
   return (
+    
     <div
       key={key}
       className="post"
-      // onClick={() =>
-      //   // dispatch(
-      //   //   setQuestionInfo({
-      //   //     questionId: Id,
-      //   //     questionName: question,
-      //   //   })
-      //   // )
-      // }
+     
     >
       <div className="post__info">
-        <Avatar
-          src={
-            "http://tinygraphs.com/labs/isogrids/hexa16/tinygraphs?theme=heatwave&numcolors=4&size=220&fmt=svg"
-          }
-        />
-        <h4>{users?.name ? users?.name : users?.email}</h4>
-        {timestamp && (
-          <small>
-            <TimeAdded date={timestamp} />
-          </small>
-        )}
-      </div>
+      <div className='post_info'>
+  
+  <img className='post1' src="https://qph.cf2.quoracdn.net/main-thumb-ti-3832469-50-sqvdigdvggtunjjeflgckxvcfepzzhxh.jpeg" size="36" alt="Icon for kuora's forbidden station"/>
+  <div><h4 className='authrname'>Dhan-Oh</h4></div>
+  </div>
+  <div className='timedte'>{new Date().toLocaleString()}</div>
+
+
+  
+       </div>
       <div className="post__body">
         <div className="post__question">
           <p>{question}</p>
-          <button onClick={handleModal} className="post__btnAnswer">
-            Answer
-          </button>
-
+          
           <Modal
             open={IsmodalOpen}
             onClose={() => setIsModalOpen(false)}
@@ -138,11 +160,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
                 {""}
                 on{" "}
                 <span className="name">
-                  {/* {timestamp && (
-                    <small>
-                      <TimeAdded date={timestamp} />
-                    </small>
-                  )} */}
+                 
                   {new Date(timestamp).toLocaleString()}
                 </span>
               </p>
@@ -169,16 +187,33 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
           objectFit: "contain"
         }} src={imageUrl} alt="" />
         <div className="post__footer">
-        <div className="post__footerAction">
-          <ArrowUpwardOutlinedIcon />
-          <ArrowDownwardOutlinedIcon />
-        </div>
+      
+        <button 
+        
+        onClick={handleModal} 
+        
+        className='ansBtn'><svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke-width="1.5" fill="none" fill-rule="evenodd"><path d="M18.571 5.429h0a2 2 0 0 1 0 2.828l-9.9 9.9-4.24 1.416 1.412-4.245 9.9-9.9h0a2 2 0 0 1 2.828 0Z" className="icon_svg-stroke" stroke="#666" stroke-linecap="round" stroke-linejoin="round"></path><path className="icon_svg-fill_as_stroke" fill="#666" d="m4.429 19.571 2.652-.884-1.768-1.768z"></path><path d="M14.5 19.5h5v-5m-10-10h-5v5" className="icon_svg-stroke" stroke="#666" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+        <span className='btntext'>Answer</span></button>
 
-        <RepeatOutlinedIcon />
-        <ChatBubbleOutlineOutlinedIcon />
+
+         <p className='follow'><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g className="icon_svg-stroke" stroke="#666" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round"><path d="M14.5 19c0-5.663-3.337-9-9-9m14 9c0-8.81-5.19-14-14-14"></path><circle cx="7.5" cy="17" r="2" className="icon_svg-fill"></circle></g></svg><span className='btntext'>Follow</span>
+<span> </span>
+</p>
+
+
+
+        
+
+        <p className='pass'>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m11.828 9.314 3.9-3.9a2 2 0 1 1 2.828 2.829l-3.9 3.9m-3.535 3.535-2.464 2.464-4.241 1.416 1.412-4.244 2.465-2.465" className="icon_svg-stroke" stroke="#666" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"></path><path className="icon_svg-fill_as_stroke" fill="#666" d="m4.414 19.556 2.652-.884-1.768-1.767z"></path><path d="M4.636 5.636 18.5 19.5" className="icon_svg-stroke" stroke="#666" stroke-width="1.5" stroke-linecap="round"></path></g></svg><span className='btntext'>Pass</span></p>
+
+    
         <div className="post__footerLeft">
-          <ShareOutlined />
-          <MoreHorizOutlined />
+        <div className='Downvote_copy'>
+<p className='downvote'><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 20 9-11h-6V4H9v5H3z" className="icon_svg-stroke icon_svg-fill" stroke="#666" fill="none" stroke-width="1.5" stroke-linejoin="round"></path></svg></p>
+
+<p className="downvote"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.25 11.25a1.06 1.06 0 1 0 1.5 1.5 1.06 1.06 0 0 0-1.5-1.5Zm-7 0a1.06 1.06 0 1 0 1.5 1.5 1.06 1.06 0 0 0-1.5-1.5Zm14 0a1.06 1.06 0 1 0 1.5 1.5 1.06 1.06 0 0 0-1.5-1.5Z" className="icon_svg-stroke" fill="#666" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></p>
+</div>
         </div>
       </div>
         <p style = {{
@@ -195,7 +230,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
               
           {
             // answer comes here
-            getAnswers.map((_answer) => (<>
+            getAnswers.map((_a) => (<>
             <div style = {{
               display: "flex",
               flexDirection: "column",
@@ -210,34 +245,103 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
                 fontWeight: "600",
                 color: "#888"
               }} className = 'post-answered'>
-                <Avatar src = {
-                  "http://tinygraphs.com/labs/isogrids/hexa16/tinygraphs?theme=heatwave&numcolors=4&size=220&fmt=svg"
-                } />
-                <div style = {{
-                  margin: "0px 10px"
-                }} className = 'post-info'>
-                  
-                  <p style = {{
-                    margin: "5px 0"
-                  }}>{_answer?.userDetails?.userName ? _answer?.userDetails?.userName : _answer?.userDetails?.userEmail}</p>
-                  {
-                    _answer?.createdAt &&
-                    <span><TimeAdded date = {_answer.createdAt} /></span>
-                  }
-                  
-                </div>
+
+
+                <div 
+    style={{
+        display: "flex",
+        alignItems: "center",
+        marginBottom: "10px",
+        fontSize: "12px",
+        fontWeight: 600,
+        color: "#888",}}
+className='postAnswered'> {/*in postAnswered div avatar of person who answered question will come */}
+    <img className='answerimg' src="https://qph.cf2.quoracdn.net/main-thumb-1872060-50-rvgzkecwishuhixykqudakuxhfguhafe.jpeg" size="36" alt="Icon for kuora's forbidden station"/>
+
+<div
+
+ style={{
+    margin: "0px 10px",
+  }}
+
+className='AvatarInfo'>
+<p  
+ style={{
+    marginTop:"2px",
+    marginBottom:"2px",
+    color:"black",
+
+  }}
+>Gorge</p>
+<small>Gorilla ROI - Import Amazon Seller Data Into Google SheetsFeatured on Inc</small>
+<span className='time'>
+  <LastSeen date={_a?.createdAt} /></span>
+</div>
+
+</div> {/* this is main div close of postAnswered */}
+
+                
               </div>
               <div className = 'post-answer'>
-                {parse(_answer.answer)}
+                {parse(_a.answer)}
+               
+
+{/* vote button of answer */}
+                <div className="answerVotemain voteanswer">
+        <div className=''>
+        <button
+      className={`postUpvote ${upvoted ? 'upvoted' : ''}`}
+      onClick={handleUpvote}
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="M12 4 3 15h6v5h6v-5h6z"
+          className=""
+          stroke-width="1.5"
+          stroke="#666"
+          fill={upvoted ? '#2e69ff' : 'none'} // Set fill attribute conditionally
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+      <span className="Upvotetxt">Upvote</span>
+      <span className="Upvotetxt"> · </span>
+      <span className="Upvotetxt">{count}</span>
+    </button>
+    
+    <button
+      className={`postDownvote ${downvoted ? 'downvoted' : ''}`}
+      onClick={handleDownvote}
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path
+          d="m12 20 9-11h-6V4H9v5H3z"
+          className="icon_svg-stroke icon_svg-fill"
+          stroke="#666"
+          fill={downvoted ? 'red' : 'none'} // Set fill attribute conditionally
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+
+</div>
+</div>
+{/* vote button of answer  end*/}
+
               </div>
             </div>
-            </>))
+            </>)
+           
+            )
           }
         </div>
       </div>
-      
-    </div>
-  );
+    </div>   
+
+  
+  
+
+    );
 }
 
-export default Post;
+export { QuoraPost as Post };

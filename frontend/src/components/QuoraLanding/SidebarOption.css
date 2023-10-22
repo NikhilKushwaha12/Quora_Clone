@@ -1,38 +1,64 @@
-.sidebarOptions {
-  display: flex;
-  flex-direction: column;
-}
-.sidebarOption {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-}
+.sidebar_main{
+  margin-top: 20px;
+  flex: 0.2;
+  
+  }
+  
+  
+  .sidebaroptions_main {
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebarOption {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      cursor: pointer;
+    width: 190px;
+    }
+    
+    .sidebarOption:hover {
+      background: rgb(211, 211, 211);
+      border-radius: 5px;
+    }
+    .sidebarOption > img {
+      height: 29px;
+      width: 25pt;
+      border-radius: 5px;
+      margin-left: 20px;
+    }
+    
+    .sidebarOption {
+      font-size: medium;
+      margin-left: 40px;
+     
+    }
+    .sidebarOption > p {
+      margin-left: 10px;
+      color: gray;
+      font-weight: 400;
+      font-size: 13px;
+    }
+    
+    .sidebarOption > .text {
+      margin-left: 15px;
+      color: gray;
+      font-weight: 400;
+      font-size: 14px;
+      
+    }
+  
+  .active{
+  border-radius: 8px;
+      background-color: rgb(227, 226, 226);
+      margin-bottom: 8px;
+  }
+    .addicon{
+      background-color: lightgray;
+      border-radius: 10px;
+      width: 20px !important;
+      height: 20px !important;
+  
+    }
 
-.sidebarOption:hover {
-  background: rgb(211, 211, 211);
-  border-radius: 5px;
-}
-.sidebarOption > img {
-  height: 30px;
-  border-radius: 5px;
-  margin-left: 20px;
-}
 
-.sidebarOption > .MuiSvgIcon-root {
-  font-size: medium;
-  margin-left: 20px;
-}
-.sidebarOption > p {
-  margin-left: 10px;
-  color: gray;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.sidebarOption > .text {
-  margin-left: 23px;
-  color: gray;
-  font-weight: 400;
-  font-size: 13px;
-}

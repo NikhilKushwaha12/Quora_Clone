@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import QuorBox from "./QuorBox";
 import "./Feed.css";
-import Post from "./Post";
-import db from "../../firebase";
+import { Post } from './Post'; // Import the AdditionalContent component
+// import db from "../../firebase";
 import axios from "axios";
-import { token } from "../../Utils/decodedToken";
+// import { token } from "../../Utils/decodedToken";
+import Uploads from "./upload";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -13,16 +14,15 @@ function Feed() {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        authorization: token,
       },
     };
-    if (token !== "") {
-      axios.get("/api/questions", config).then((res) => {
-        setPosts(res.data.reverse());
-        console.log(res.data);
-      });
-    }
+
+    axios.get("/api/questions", config).then((res) => {
+      setPosts(res.data.reverse());
+      console.log(res.data);
+    });
   }, []);
+
   return (
     <div className="feed">
       <QuorBox />
@@ -37,6 +37,8 @@ function Feed() {
           answers={_post.allAnswers}
         />
       ))}
+      {/* Render the AdditionalContent component here */}
+      <Uploads />
     </div>
   );
 }

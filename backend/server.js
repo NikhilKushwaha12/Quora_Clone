@@ -8,8 +8,8 @@ const bodyParser = require("body-parser");
 // const busboyBodyParser = require("busboy-body-parser");
 // const config = require("./config");
 const db = require("./db");
-const config = require("./config");
-const { PORT } = config;
+// const config = require("./config");
+const PORT = 8000;
 
 //db connection
 db.connect();
@@ -34,7 +34,7 @@ app.get("*", (req, res) => {
   try {
     res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`));
   } catch (e) {
-    res.send("Welcome to CodeWithAkkyLabs");
+    res.send("Welcome ");
   }
 });
 

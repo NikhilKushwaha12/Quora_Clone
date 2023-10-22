@@ -1,95 +1,68 @@
-import { Add } from "@material-ui/icons";
+// import { Add } from "@material-ui/icons";
 import React from "react";
 import "./SidebarOption.css";
+import AddIcon from '@mui/icons-material/Add';
 
 function SidebarOptions() {
   return (
-    <div className="sidebarOptions">
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-930-100-cbbsbwijdhpyzlpipejvqpiijhhoaday.jpeg"
-          alt=""
-        />
-        <p>History</p>
-      </div>
+    <div className='sidebaroptions_main'>
 
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-858-100-VnZbEVtOIGkEHXlnYId9slumV59IPgkA.jpeg"
-          alt=""
-        />
-
-        <p>Business</p>
-      </div>
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-1913-100-B8JrwaVauFzsaTSqXDqoWLCXzQb2mTE9.jpeg"
-          alt=""
-        />
-        <p>Psychology</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-877-100-e7jKHEQr0HExAIA9rlsyHlV6HJyRruEo.jpeg"
-          alt=""
-        />
-        <p>Cooking</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-801-100-Sf8h894FXbQZQit0TeqDrrqS6xw6dwCQ.jpeg"
-          alt=""
-        />
-        <p>Music</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-931-100-c8WCPwZ9qPsh5zLGQ5wHh1ddxtc9Cch7.jpeg"
-          alt=""
-        />
-        <p>Science</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-1140-100-24q3tiv4WhPssc5TGwf0mvCM5aiqGVXW.jpeg"
-          alt=""
-        />
-        <p>Health</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-843-100-W7FzODceTO2aQmp8D7E4rKZ8YgSv21eR.jpeg"
-          alt=""
-        />
-        <p>Movies</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-2177-100-JiR07D1TQSfeQzRvWXomVaY4Poj2f8Yb.jpeg"
-          alt=""
-        />
-        <p>Technology</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-996-100-bfZBQjeEenKKl8fcNY4tVv0FyArtB0Mb.jpeg"
-          alt=""
-        />
-        <p>Education</p>
-      </div>
-      <div className="sidebarOption">
-        <Add />
-        <p className="text">Discover Spaces</p>
-      </div>
+    <div className="sidebarOption active">
+            <AddIcon className='addicon '/>
+            <p className="text ">Create Space</p>
+           
+          </div>
+    
+    
+    <div className='sidebarOption'>
+    
+      <img className="sidebarImg1" src="https://qph.cf2.quoracdn.net/main-thumb-ti-3204259-50-kaxpmytkjygsrjwxhniqnepgoluywphc.jpeg" alt="" width="18" height="18"/>
+    <p> Hypocrisy of feminism </p>
     </div>
-  );
-}
+    
+    <div className='sidebarOption'>
+    <img className="sidebarImg2" src="https://qph.cf2.quoracdn.net/main-thumb-ti-2144986-50-zycizndvmgrlpzgvmyqvpczrbshrsxcc.jpeg" alt="" width="18" height="18"/>
+    <p> Why Feminist Cry</p>
+    </div>
+    
+    
+    <div className='sidebarOption'>
+    <img className="sidebarImg3" src="https://qph.cf2.quoracdn.net/main-thumb-ti-1646645-50-yivziwjmefotolsaxijyzzlqbkwywlgq.jpeg" alt="" width="18" height="18"/>
+    <p> How 90% GDP is by men </p>
+    </div>
+    
+    <div className='sidebarOption'>
+     <img className="sidebarImg4" src="https://qph.cf2.quoracdn.net/main-thumb-ti-2655873-50-cxdietebidstpmcghblkicdxedvfsiug.jpeg" alt="" width="18" height="18"/>
+    <p> IT & Companies</p>
+    </div>
+    
+    
+    
+    <div className='sidebarOption'>
+    <img className="sidebarImg5" src="https://qph.cf2.quoracdn.net/main-thumb-ti-1597745-50-jgefyexjdloqszhzcvgivyfsakbugsni.jpeg" alt="" width="18" height="18"/>
+    <p> Why Do we really need Women</p>
+    </div>
+    
+    
+    
+    <div className='sidebarOption'>
+    <img className="sidebarImg6" src="https://qph.cf2.quoracdn.net/main-thumb-ti-1578736-50-qrcddnhqbqymirsnflsoxjbdpvdudoak.jpeg" alt="" width="18" height="18"/>
+    <p> Why most Women Can't Drive </p>
+    </div>
+    
+    
+    
+    
+    <div className='sidebarOption'>
+    <img className="sidebarImg7" src="https://qph.cf2.quoracdn.net/main-thumb-ti-862-50-wpftnbhmeklorazswextfhvxnjxiellm.jpeg" alt="" width="18" height="18"/>
+    <p> Informative Diaries </p>
+    </div>
+    
+    
+    
+    
+    </div>
+      )
+    }
 
 export default SidebarOptions;

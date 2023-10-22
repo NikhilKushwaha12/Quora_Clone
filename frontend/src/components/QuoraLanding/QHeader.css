@@ -18,9 +18,10 @@
   /* padding: 5px; */
 }
 
-.qHeader__logo > img {
-  height: 30px !important;
-  object-fit: contain;
+.qHeader__logo{
+  position: relative;
+  top: 2px;
+  margin-right: 30px;
 }
 
 .qHeader__icons {
@@ -28,47 +29,28 @@
 }
 
 .qHeader__icon {
-  padding: 5px;
+  padding: 7px;
   cursor: pointer;
+  position: relative;
+  top: 7px;
 }
 
-.qHeader__icon:hover {
+/* .qHeader__icon:hover {
   background-color: #eee;
   border-radius: 5px;
-}
+} */
 
-.qHeader__icon > .MuiSvgIcon-root {
+/* .qHeader__icon > .MuiSvgIcon-root {
   color: gray;
   font-size: xx-large;
   margin-left: 20px;
   margin-right: 20px;
-}
+}*/
 
-.qHeader__icon:hover > .MuiSvgIcon-root {
+ .qHeader__icon:hover > .MuiSvgIcon-root {
   color: #000;
-}
+} 
 
-/* .qHeader__icons {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.qHeader__icons > .active > .MuiSvgIcon-root {
-  color: #8f1f1b;
-}
-
-.qHeader__icon > .MuiSvgIcon-root {
-  font-size: xx-large;
-  padding: 5px 20px;
-  color: gray;
-}
-
-.qHeader__icon > .MuiSvgIcon-root:hover {
-  background-color: rgba(233, 233, 233, 0.5);
-  border-radius: 10px;
-  color: #b92b27;
-} */
 
 .qHeader__input {
   display: flex;
@@ -105,6 +87,7 @@
   margin-left: 25px;
   cursor: pointer;
 }
+
 .qHeader__Rem > .MuiSvgIcon-root:hover {
   color: #000;
 }
@@ -117,10 +100,10 @@
   margin-left: 25px;
 }
 
-.qHeader__Rem > .MuiButton-root:hover {
+/* .qHeader__Rem > .MuiButton-root:hover {
   color: #222;
   background: rgb(214, 214, 214);
-}
+} */
 
 .modal__title {
   display: flex;
@@ -169,6 +152,7 @@
   flex-direction: column;
   margin-top: 30px;
   flex: 1;
+  
 }
 
 .modal__Field > .modal__fieldLink {
@@ -183,6 +167,10 @@
   border: none;
   outline: none;
   margin-left: 5px;
+}
+
+.modal__fieldLink{
+  margin-top: 20px;
 }
 
 .modal__buttons {
@@ -233,4 +221,386 @@
   .qHeader__input {
     display: none;
   }
+}
+
+
+
+
+
+
+
+/* new added */
+
+/* icons design css */
+.header_trypro {
+  box-sizing: border-box;
+  padding: 0px 12px;
+  max-width: 90px;
+  white-space: nowrap;
+  height: 25px;
+  position: relative;
+  box-shadow: rgba(78, 78, 78, 50) 0px 0px 1px 1px;
+  border-width: 0px;
+  outline: none;
+  background-color: transparent;
+  font-size: 13px;
+  border-radius: 20px;
+  /* margin-bottom: 13px; */
+ margin-left: -30px;
+ bottom: 10px;
+}
+
+.header_profile{
+  width: 26px; /* Adjust the size of the circle as needed */
+  height: 26px; /* Should be equal to width for a perfect circle */
+  background-color: #3498db; /* Background color of the circle */
+  border-radius: 50%; /* Makes the element a perfect circle */
+  position: relative;
+  overflow: hidden; /* Clip the image inside the circle */
+  margin-top: 3px;
+margin-left: -29px !important;
+}
+
+.q-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain the aspect ratio and cover the circle */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header_language{
+ /* position: relative; */
+  margin-left: -29px !important;
+margin-top: 1px;
+/* bottom: 10px; */
+}
+
+.myBtn{
+  background-color: rgb(185, 43, 39);
+  padding: 5px 9px;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0);
+  border: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: -29px !important;
+position: relative;
+bottom: 10px;
+white-space: nowrap;
+}
+
+/* icons design css end */
+
+
+
+
+
+
+
+.header{
+display: flex;
+align-items: center;
+background-color: #fff;
+position: sticky;
+z-index: 1000;
+top: 0px;
+/* box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.5); */
+box-shadow: 2px 3px 6px rgba(187, 187, 187, 0.5);
+justify-content: center;
+}
+
+.header-logos-main{
+display: flex;
+align-items: center;
+justify-content: space-between;
+/* padding: 5px; */
+}
+
+
+
+.header-iconss{
+display: flex;
+/* position: ; */
+align-items: center; 
+
+}
+
+.header-icon{
+padding: 5px;
+cursor: pointer;
+height: 40px;
+margin-top: 7px;
+}
+
+.header-logo{
+height: 7px;
+margin-bottom: 50px;
+}
+
+
+
+.header-icon{
+color: gray;
+font-size: xx-large;
+margin-left: 20px;
+margin-right: 20px;
+
+}
+
+.header-icon{
+color: #000;
+}
+
+
+.qHeader_search{
+display: flex;
+align-items: center;
+border: 1px solid lightgray;
+padding: 5px;
+border-radius: 5px;
+margin-left: 5px;
+
+}
+
+
+
+.Header_search > input {
+background-color: transparent;
+height: 30px;
+color: rgb(49, 49, 49);
+position: relative;
+
+width: 17rem;
+margin-left: -25px !important;
+border-radius: 4px;
+bottom: 10px;
+}
+
+.searchicon{
+margin-top: 19px;
+color: gray;
+position: absolute;
+margin-left: -22px;
+height: 21px !important;
+bottom: 21.5px;
+}
+
+.q-image{
+cursor: pointer;
+}
+
+.header_profile {
+font-size: xx-large;
+color: gray;
+margin-left: 25px;
+cursor: pointer;
+display: flex;
+align-items: center;
+}
+.header_profile:hover {
+color: #000;
+}
+
+.header_profile{
+color: white;
+background: #222;
+text-transform: inherit;
+margin-left: 25px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+.header-iconss {
+  display: none;
+}
+
+.Header_search {
+  display: none;
+}
+}
+
+
+
+
+/* question popup */
+.myBtn {
+  background-color: rgb(185, 43, 39);
+  padding: 5px 9px;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  border: rgb(0, 0, 0);
+  border: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  top: 3px;
+}
+
+.myModal {
+  display: none;
+  /*hide by default*/
+  position: fixed;
+  /*make it stay in place*/
+  z-index: 1;
+  /*sits on top of everything*/
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /*in case content needs to scroll*/
+  /* background-color: var(--modalContentBg); */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.myModal-content {
+  background-color: rgb(255, 255, 255);
+  margin: 15% auto;
+  /*15% from the top, left and right*/
+  padding: 0px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  box-shadow: 0px 0px 8px rgb(0, 0, 0, 0.5);
+  width: 80%;
+  /*how much of the screen it takes up side to side*/
+}
+
+.myModal-header {
+  padding: 6px 16px;
+  color: rgba(0, 0, 0);
+}
+
+.close {
+  color: rgba(0, 0, 0, 0.4);
+  float: right;
+  font-size: 28px;
+  padding-top: 4px;
+  font-weight: normal;
+}
+
+.close:hover,
+.close:focus {
+  color: #2b6dad;
+  cursor: pointer;
+}
+
+.myModal-body {
+  padding: 26px 16px;
+}
+
+
+.firstQuestion {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 21px 25px;
+  border-radius: 3px;
+  border: 2px;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+.firstQuestion > h2{
+margin-bottom: 7px;
+}
+.firsth4{
+  margin-bottom: 2px;
+  }
+
+.questionForm {
+  border: none;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  font-weight: bold;
+}
+
+.questionForm::placeholder {
+  color: rgb(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.questionForm:focus {
+  outline: none;
+}
+
+.attachment {
+  text-align: center;
+  border-top: 1px solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  margin: 20px 0px;
+}
+
+.addAttachment {
+  border: none;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.addAttachment::placeholder {
+  color: rgb(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.addAttachment:focus {
+  outline: none;
+}
+
+
+.myModal-footer {
+  padding: 20px 16px 40px 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 255);
+  margin-top: 60px;
+}
+
+.submitBtn {
+  color: #fff;
+  float: right;
+  background-color: #2b6dad;
+  border-radius: 3px;
+  border-color: rgb(58, 102, 173);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+}
+
+.form {
+  float: right;
+  padding-right: 20px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.addedBy {
+  color: rgb(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+.cancel {
+  float: right;
+  padding-right: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.cancel:hover,
+.cancel:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.addAnon:hover,
+.addAnon:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+ul {
+  padding-left: 20px;
 }

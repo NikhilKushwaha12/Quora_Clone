@@ -34,9 +34,9 @@
 }
 
 .post__body > .post__question {
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -56,22 +56,15 @@
   border-radius: 5px;
 }
 
-.post__btnAnswer:hover {
-  color: #222;
-  background: lightgray;
-}
 
-.post__question > p:hover {
+ .post__question > p:hover {
   text-decoration: underline;
-}
+} 
 
 .post__body > .post__answer > p {
   margin-bottom: 10px;
 }
 
-/* .post__image {
-  background: rgb(0, 140, 255);
-} */
 
 .post__body > img {
   width: 100%;
@@ -89,11 +82,6 @@
   margin-top: 5px;
 }
 
-.post__footer > .MuiSvgIcon-root {
-  color: gray;
-  margin-right: 40px;
-  cursor: pointer;
-}
 
 .post__footerAction {
   background-color: lightgray;
@@ -103,16 +91,7 @@
   justify-content: space-around;
   border-radius: 33px;
 }
-.post__footerAction > .MuiSvgIcon-root {
-  color: gray;
-  margin-right: 40px;
-  cursor: pointer;
-}
 
-.post__footerAction > .MuiSvgIcon-root:hover {
-  color: rgb(0, 140, 255);
-  margin-right: 40px;
-}
 
 .post__footerLeft {
   margin-left: auto;
@@ -196,10 +175,10 @@
   cursor: pointer;
   width: 50%;
 }
-.modal__button > .add:hover {
-  background-color: #eee;
+/* .modal__button > .add:hover {
+ 
   color: #222;
-}
+} */
 
 .react-responsive-modal-modal {
   /* width: 600px; */
@@ -211,11 +190,428 @@
   height: 150px;
 }
 
-/* .customOverlay {
-  background: rgba(0, 0, 0, 0.7);
+
+
+
+
+/* new added */
+
+.AskQuestionIMG{
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-top: 13px;
+  margin-left: 14px;
+  }
+  
+  
+  .feedBox{
+      display: flex;
+  }
+  
+  
+  .askQuesicons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 0px 60px 0px 60px;
+  align-items: baseline;
+  }
+  
+  
+
+  .asktext{
+      position: relative;
+      bottom: 6px;
+      font-size: 13px;
+  }
+  
+  
+  
+  .askques{
+      border: 1px solid rgb(196, 193, 193);
+      border-radius: 40px;
+      width: 32rem;
+      height: 35px;
+     margin-top: 10px;
+     background-color:rgb(245, 245, 245);
+     margin-left: 6px;
+     color: gray;
+     font-size: 15px;
+  }
+  .askques > p{
+  position: relative;
+      bottom: 7px;
+      margin-left: 9px;
+  }
+  /* .askques:hover{
+      background: rgb(228, 228, 228);
+  
+  } */
+  .feedBox_main{
+  background-color: white;
+  width: 37rem; 
+  margin-left: 25px;
+  border-radius: 4px;
+  height: 84px;
+  border: 1px solid rgb(196, 193, 193);
+  }
+  
+  
+  
+  
+  /* post css */
+  
+  .post_main{
+      width: 43.8rem;
+      background-color: white;
+      margin-left: -1px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid rgb(200, 196, 196) ;
+  }
+  .post_info{
+      display: flex;
+      margin-top: 10px;
+      margin-left: 10px;
+  }
+  
+  .post_info > h4{
+      position: relative;
+  bottom: 10px;
+  margin-left: 9px;
+  font-size: 13px;
+  }
+  
+  .post_info > img{
+    width: 43px;
+  height: 43px;
+  border-radius: 25%;
+  /* margin-left: 15px; */
+  
+  
+  }
+  .btnss{
+  justify-content: space-between;
+      display: flex;
+  }
+  
+  .btnsslogo{
+      display: flex;
+      margin-left: 8px;
+  }
+  
+  .Downvote_copy{
+      display: flex;
+  }
+  .ansBtn{
+      height: 40px;
+      width: 7rem;
+      padding: 9px;
+      border-radius: 25px;
+      border: 1px solid rgb(177, 173, 173);
+      margin-top: 9px;
+  }
+  
+  .btntext{
+  position: relative;
+  bottom: 5px;
+  }
+  
+  
+  .btnsslogo > p{
+  position: relative;
+  /* bottom: 18px; */
+  
+  }
+  
+  .pass , .follow{
+      margin-left: 25px;
+position: relative;
+top: 4px;
+  }
+  
+  .Downvote_copy{
+      margin-right: 15px;
+  }
+  
+  .downvote{
+  margin-right: 9px;
+ position: relative;
+top: 5px;
+  }
+  
+  
+  
+  
+  
+  /* answer design  */
+  
+  .answerimg{
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+  }
+  
+  
+  .answerVotemain{
+      display: flex;
+      margin-top: 6px;
+     position: relative;
+  }
+  
+  .voteanswer{
+    margin-bottom: -16px;
+    display: flex !important;
+    margin-top: 9px !important;
+   position: relative !important;
+   right: 29px !important;
 }
-.customModal {
-  background: #b2dbbf;
-  max-width: 500px;
-  width: 100%;
-} */
+
+
+  .answerUpvote{
+      border-radius:  25px 0px 0px 25px;
+      border: 1px solid rgb(176, 174, 174);
+  }
+  
+  .answerDownvote{
+      border-radius:  0px 25px 25px 0px;
+      border: 1px solid rgb(176, 174, 174);
+     
+  }
+  .downvotetxt > svg{
+      position: relative;
+      bottom: -1px;
+     
+  }
+  
+  .Upvotetxt{
+      position: relative;
+      bottom: 5px;
+  }
+  
+  .commentTxt{
+  position: relative;
+  bottom: -2px;
+      margin-left: 15px;
+  }
+  
+  .postUpvote{
+      border-radius:  25px 0px 0px 25px;
+      border: 1px solid rgb(176, 174, 174);
+  margin-left: 9px;
+  margin-bottom: 8px;
+  }
+  .postDownvote{
+      border-radius:  0px 25px 25px 0px;
+      border: 1px solid rgb(176, 174, 174);
+      margin-bottom: 8px;
+  }
+  
+  
+  .shareTxt{
+      position: relative;
+  bottom: -1.6px;
+      margin-left: 15px;
+  }
+  
+  .noOfComment{
+      position: relative;
+      bottom: 6px;
+      font-size: 14px;
+  }
+  
+  .noOfshare{
+      position: relative;
+      bottom: 6px;
+      font-size: 14px;
+  }
+  
+  
+
+  h3{
+      margin-left: 9px;  
+  }
+  h3:hover{
+      text-decoration: underline;
+  }
+  
+  .postAns{
+     margin-left: 9px; 
+     margin-bottom: -21px;
+  }
+  
+  .authrdetail{
+      position: relative;
+      bottom:  40px;
+      font-size: 12px;
+      margin-left: 7px;
+  
+  }
+  .authrname{
+      position: relative;
+      bottom:  -1px;
+      margin-left: 9px;
+  }
+  
+  .authrname:hover{
+     text-decoration: underline;
+  }
+  
+  .postques{
+      margin-top: 10px;
+  padding: 0px 10px 0px 19px;
+  margin-bottom: 9px;
+  }
+  
+  .postques:hover{
+      text-decoration: underline;
+  }
+  .noOFans:hover{
+      text-decoration: underline;
+  }
+  
+  .post_body2{
+     margin-top: 10px;
+  }
+  
+  .post2img > img{
+      width: 36rem;
+      margin-top: 14px;
+      margin-left: 8px;
+      margin-right: auto;
+      border: 1px solid rgb(188, 188, 188);
+      text-align: center;
+  }
+  
+  .readmore{
+  text-decoration: underline;
+      color: #195faa;
+      margin-left: 4px;
+      position: relative;
+      bottom:  -1px;
+      left: 17rem;
+  }
+  
+  .readmore:hover{
+          color: #67a8c1;
+      }
+  
+      .postUpvote.upvoted {
+          /* Define your styles here, e.g., change the color to green */
+          color: #2e69ff;
+        }
+        
+        /* Downvote button when downvoted */
+        .postDownvote.downvoted {
+          /* Define your styles here, e.g., change the color to red */
+          color: red;
+        }
+  
+  
+     
+  
+        /* answer  pop up css */
+  
+        .submitansBtn {
+          position: relative;
+          top: 15px;
+          float: right;
+          background-color: .2b6dad;
+          border-radius: 3px;
+          border-color: rgb(58, 102, 173);
+          font-size: 14px;
+          cursor: pointer;
+          padding: 8px;
+          margin: -8px;
+          margin-bottom: 8px;
+        }
+  
+  
+        .cancelAns {
+          float: right;
+          padding-right: 12px;
+          color: rgba(0, 0, 0, 0.4);
+          position: relative;
+          top: 15px;
+          margin-right: 10px;
+        }
+        
+        .cancelAns:hover,
+        .cancelAns:active {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+       
+        .modelQuestion{
+          border-radius: 18px;
+          display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+        }
+  
+        .modelQuestion > h1 {
+          color: #8f1f1b;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        
+        .modelQuestion > p {
+          color: gray;
+          font-size: small;
+        }
+        
+        .modelQuestion > p > .name {
+          color: black;
+          font-weight: bold;
+        }
+  .username{
+  margin-bottom: 9px;
+  }
+  
+  
+  .model_answers{
+      height: 350px;
+    
+  }
+  
+        .quill{
+  left: 0;
+  top: 0;
+  width: 600px;
+  height: 150px;
+  }
+  
+  
+  .time{
+      position: relative;
+      font-size: 10px;
+      color: #000;
+      
+  }
+  .timepost{
+      display: flex;
+      position: relative;
+      top: 45px;
+  }
+  
+  .postedbydate{
+      position: relative;
+  bottom: 40px;
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  }
+  
+  .timedte{
+      position: relative;
+      bottom: -10px;
+      margin-left: -70px;
+      font-size: 11px;
+  }
+
+
+
+
