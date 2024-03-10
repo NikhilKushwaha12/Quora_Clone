@@ -17,18 +17,18 @@ function SidebarOptions() {
     <div className='sidebarOption'>
     
       <img className="sidebarImg1" src="https://qph.cf2.quoracdn.net/main-thumb-ti-3204259-50-kaxpmytkjygsrjwxhniqnepgoluywphc.jpeg" alt="" width="18" height="18"/>
-    <p> Hypocrisy of feminism </p>
+    <p> MEMEs | world </p>
     </div>
     
     <div className='sidebarOption'>
     <img className="sidebarImg2" src="https://qph.cf2.quoracdn.net/main-thumb-ti-2144986-50-zycizndvmgrlpzgvmyqvpczrbshrsxcc.jpeg" alt="" width="18" height="18"/>
-    <p> Why Feminist Cry</p>
+    <p> Informative Diaries</p>
     </div>
     
     
     <div className='sidebarOption'>
     <img className="sidebarImg3" src="https://qph.cf2.quoracdn.net/main-thumb-ti-1646645-50-yivziwjmefotolsaxijyzzlqbkwywlgq.jpeg" alt="" width="18" height="18"/>
-    <p> How 90% GDP is by men </p>
+    <p> India GDP </p>
     </div>
     
     <div className='sidebarOption'>
@@ -40,14 +40,14 @@ function SidebarOptions() {
     
     <div className='sidebarOption'>
     <img className="sidebarImg5" src="https://qph.cf2.quoracdn.net/main-thumb-ti-1597745-50-jgefyexjdloqszhzcvgivyfsakbugsni.jpeg" alt="" width="18" height="18"/>
-    <p> Why Do we really need Women</p>
+    <p> Memes are Life</p>
     </div>
     
     
     
     <div className='sidebarOption'>
     <img className="sidebarImg6" src="https://qph.cf2.quoracdn.net/main-thumb-ti-1578736-50-qrcddnhqbqymirsnflsoxjbdpvdudoak.jpeg" alt="" width="18" height="18"/>
-    <p> Why most Women Can't Drive </p>
+    <p> Tech Trend </p>
     </div>
     
     
@@ -55,7 +55,7 @@ function SidebarOptions() {
     
     <div className='sidebarOption'>
     <img className="sidebarImg7" src="https://qph.cf2.quoracdn.net/main-thumb-ti-862-50-wpftnbhmeklorazswextfhvxnjxiellm.jpeg" alt="" width="18" height="18"/>
-    <p> Informative Diaries </p>
+    <p> Focused Life</p>
     </div>
     
     
